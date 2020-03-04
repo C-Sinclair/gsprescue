@@ -47,9 +47,45 @@
             your donation.
           </p>
           <p class="thankyou">Thank you</p>
-          <button>
-            PayPal
-          </button>
+
+          <FORM method=post action=https://www.paypal.com/cgi-bin/webscr>
+            <INPUT name=cmd value=_s-xclick type=hidden>
+            <INPUT name=hosted_button_id value=8365950 type=hidden>
+            <INPUT border=0 name=submit alt="PayPal - The safer, easier way to pay online." src="https://www.paypal.com/en_US/GB/i/btn/btn_donateCC_LG.gif" type=image style="height: 47px; width: 160px">
+            <IMG border=0 alt="" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width=1 height=1>
+          </FORM>
+            <FORM method=post action=https://www.paypal.com/cgi-bin/webscr>
+            <P>
+              <INPUT name=cmd value=_s-xclick type=hidden>
+              <INPUT name=hosted_button_id value=LFL826A5SMB76 type=hidden>
+            </P>
+            <P>
+              <SPAN style="FONT-SIZE: 10pt">
+                <FONT color=#005824 face="Comic Sans MS, Sans-Serif">
+                  <STRONG>You may also donate&nbsp;on a regular basis to help support GSP Rescue (SW) all the year round.
+
+                  </STRONG>
+                </FONT>
+              </SPAN>&nbsp;
+            </P>
+            <TABLE>
+            <TBODY>
+            <TR>
+            <TD><INPUT name=on0 value="Donation Options" type=hidden><SPAN style="FONT-SIZE: 10pt"><FONT color=#005824 face="Comic Sans MS, Sans-Serif"><STRONG><U>Subscription Options</U></STRONG></FONT></SPAN></TD></TR>
+            <TR>
+            <TD>
+              <SELECT name=os0><OPTION selected value=Monthly-5>Monthly-5 : �5.00GBP - monthly</OPTION><OPTION value=Monthly-10>Monthly-10 : �10.00GBP - monthly</OPTION><OPTION value=Annual>Annual : �100.00GBP - yearly</OPTION></SELECT>
+            </TD></TR></TBODY></TABLE>
+            <INPUT name=currency_code value=GBP type=hidden><INPUT border=0 name=submit alt="PayPal � The safer, easier way to pay online." src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_subscribeCC_LG.gif" type=image style="height: 47px; width: 160px"><IMG border=0 alt="" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width=1 height=1></FORM>
+            <P class=MsoNormal><B><SPAN style="FONT-FAMILY:" lang=EN-US FONT-SIZE: 16pt? Calibri?,?sans-serif?;></SPAN></B>&nbsp;</P>
+            <P class=MsoNormal></P>
+            <P class=MsoNormal><BR></P></DIV></TD></TR></TBODY></TABLE></TD></TR>
+            <TR>
+            <TD></TD></TR></TBODY></TABLE></BODY>
+            
+            
+
+
           <p>
             You may also donate on a regular basis to help support GSP Rescue
             (SW) all the year round.
@@ -60,6 +96,10 @@
       </section>
     </main>
 
-    <script src="index.js"></script>
+    <script>
+      function donateClick(event) {
+        event.preventDefault();
+      }
+    </script>
   </body>
 </html>
