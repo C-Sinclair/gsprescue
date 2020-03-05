@@ -10,6 +10,7 @@ body {
   color: rgb(62, 102, 23);
   background-color: #ffffc0;
   margin: 0;
+  font-size: 16px;
 }
 
 ul {
@@ -38,6 +39,7 @@ nav {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  transition: all 1s ease-in-out;
 }
 
 nav header {
@@ -49,6 +51,12 @@ nav #home {
   height: 40px;
   margin-top: 16px;
   fill: white;
+}
+
+nav .closer,
+nav .opener {
+  opacity: 0;
+  cursor: pointer;
 }
 
 nav li {
@@ -91,9 +99,22 @@ section {
   margin: 24px;
 }
 
+section header {
+  width: 100%;
+  background-color: #ffffc0;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+}
+
 section #logo {
-  align-self: center;
-  height: 150px;
+  height: 160px;
+  transition: all 1s ease-in-out;
+}
+
+section #logo.scrolled {
+  height: 64px;
 }
 
 .thankyou {
@@ -101,11 +122,8 @@ section #logo {
   font-size: 2.5em;
   font-weight: bold;
   text-align: right;
-  bottom: 0;
-  right: 0;
   padding: 24px;
   z-index: 10;
-  position: absolute;
   margin: 0;
 }
 
@@ -162,4 +180,74 @@ form button {
   color: white;
   font-size: 45px;
   margin-right: 8px;
+}
+
+@media screen and (max-width: 700px) {
+  section #logo {
+    height: 64px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  nav {
+    font-size: 10px;
+    min-width: 56px;
+    padding-top: 64px;
+    justify-content: flex-start;
+    height: calc(100vh - 64px);
+  }
+
+  main.open {
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  .open nav {
+    width: calc(100vw - 32px);
+    align-items: center;
+    font-size: 1.5em;
+  }
+
+  nav header {
+    left: 16px;
+  }
+
+  nav .opener {
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .open nav .opener {
+    opacity: 0;
+  }
+
+  .open nav .closer {
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+  }
+
+  nav .closer {
+    opacity: 0;
+  }
+
+  nav ul {
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+
+  .open nav ul {
+    opacity: 1;
+  }
+
+  nav footer {
+    flex-direction: column;
+  }
+
+  .open nav footer {
+    flex-direction: row;
+  }
+
+  nav footer > * {
+    margin: 8px;
+  }
 }
