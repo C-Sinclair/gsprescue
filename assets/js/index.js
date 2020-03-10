@@ -8,23 +8,14 @@ tippy("#phone", {
   interactive: true
 });
 
-const scroll = event => {
-  if (window.pageYOffset > 0) {
-    document.querySelector("section #logo").classList.add("scrolled");
+const openListener = event => {
+  const { classList } = document.querySelector("main")
+  const open = classList.contains("open")
+  if (!open) {
+    console.log("adding open")
+    classList.add("open");
   } else {
-    document.querySelector("section #logo").classList.remove("scrolled");
+    classList.remove("open");
   }
 };
-window.addEventListener("scroll", scroll);
-
-const openListener = bool => event => {
-  if (bool) {
-    document.querySelector("main").classList.add("open");
-  } else {
-    document.querySelector("main").classList.remove("open");
-  }
-};
-document.querySelector(".opener").addEventListener("click", openListener(true));
-document
-  .querySelector(".closer")
-  .addEventListener("click", openListener(false));
+document.querySelector(".opener").addEventListener("click", openListener);

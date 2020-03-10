@@ -45,6 +45,7 @@ nav {
 nav header {
   position: absolute;
   top: 0;
+  transition: all 0.5s ease-in-out;
 }
 
 nav #home {
@@ -53,10 +54,20 @@ nav #home {
   fill: white;
 }
 
-nav .closer,
 nav .opener {
   opacity: 0;
   cursor: pointer;
+  fill: white;
+  height: 40px;
+  width: 40px;
+  top: 80px;
+  position: absolute;
+  transition: all 0.5s ease;
+  transform: rotate(0deg);
+}
+
+.open nav .opener {
+  transform: rotate(180deg);
 }
 
 nav li {
@@ -197,6 +208,11 @@ form button {
     height: calc(100vh - 64px);
   }
 
+  nav .opener {
+    opacity: 1;
+    z-index: 100;
+  }
+
   main.open {
     overflow: hidden;
     flex-direction: column;
@@ -208,26 +224,17 @@ form button {
     font-size: 1.5em;
   }
 
-  nav header {
-    left: 16px;
-  }
-
-  nav .opener {
-    opacity: 1;
-    transition: all 0.4s ease-in-out;
+  .open nav header {
+    left: unset;
   }
 
   .open nav .opener {
-    opacity: 0;
+    top: 16px;
+    left: 16px;
   }
 
-  .open nav .closer {
-    opacity: 1;
-    transition: all 0.4s ease-in-out;
-  }
-
-  nav .closer {
-    opacity: 0;
+  nav header {
+    left: 16px;
   }
 
   nav ul {
