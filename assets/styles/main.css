@@ -11,6 +11,8 @@ body {
   background-color: #ffffc0;
   margin: 0;
   font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 ul {
@@ -27,7 +29,8 @@ main {
 }
 
 nav {
-  min-width: 250px;
+  z-index: 10;
+  min-width: 275px;
   padding-left: 16px;
   padding-right: 8px;
   height: 100vh;
@@ -46,6 +49,14 @@ nav header {
   position: absolute;
   top: 0;
   transition: all 0.5s ease-in-out;
+  width: calc(100% - 32px);
+}
+
+nav header .logo {
+  height: 50px;
+  position: absolute;
+  top: 16px;
+  right: 0;
 }
 
 nav #home {
@@ -75,7 +86,7 @@ nav li {
 }
 
 nav li > a {
-  font-size: 1.5em;
+  font-size: 1.35em;
   text-decoration: none;
   color: white;
 }
@@ -107,25 +118,45 @@ nav::-webkit-scrollbar {
 section {
   display: flex;
   flex-direction: column;
-  margin: 24px;
 }
 
 section header {
   width: 100%;
+  height: 150px;
   background-color: #ffffc0;
   display: flex;
-  justify-content: center;
-  position: sticky;
+  justify-content: space-between;
+  position: relative;
+}
+
+section header > img {
+  width: 30%;
+}
+
+section header .logo {
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-section #logo {
-  height: 160px;
+section header .logo img {
   transition: all 1s ease-in-out;
+  width: 250px;
+  padding: 8px;
+  background-color: #ffffc0;
+  border-radius: 4px;
 }
 
-section #logo.scrolled {
-  height: 64px;
+article {
+  margin: 24px;
+  width: calc(100% - 72px);
 }
 
 .thankyou {
@@ -136,6 +167,11 @@ section #logo.scrolled {
   padding: 24px;
   z-index: 10;
   margin: 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffc0;
+  border-radius: 4px;
 }
 
 form {
@@ -172,6 +208,11 @@ form button {
   align-self: center;
 }
 
+.columns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .facebook {
   background-color: #385898;
   cursor: pointer;
@@ -193,8 +234,17 @@ form button {
   margin-right: 8px;
 }
 
+footer {
+  display: flex;
+}
+
+footer > img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
 @media screen and (max-width: 700px) {
-  section #logo {
+  section .logo {
     height: 64px;
   }
 }
