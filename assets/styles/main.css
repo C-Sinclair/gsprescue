@@ -174,12 +174,6 @@ article {
   border-radius: 4px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 50px;
-}
-
 .input {
   display: flex;
   justify-content: space-between;
@@ -208,9 +202,36 @@ form button {
   align-self: center;
 }
 
+form#rehome > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+}
+
+form#rehome label {
+  max-width: 60%;
+}
+
 .columns {
   display: flex;
   justify-content: space-evenly;
+}
+
+#paypal.columns {
+  align-items: center;
+}
+
+#paypal .columns {
+  align-items: center;
+}
+
+#paypal select {
+  padding: 4px;
+  margin: 24px;
+}
+
+#paypal .inputImg {
+  margin: 24px;
 }
 
 .facebook {
