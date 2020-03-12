@@ -63,6 +63,7 @@ nav #home {
   height: 40px;
   margin-top: 16px;
   fill: white;
+  transition: all 0.5s ease;
 }
 
 nav .opener {
@@ -299,9 +300,21 @@ footer > img {
     left: unset;
   }
 
+  nav .logo {
+    opacity: 0;
+  }
+
+  .open nav .logo {
+    opacity: 1;
+  }
+
   .open nav .opener {
     top: 16px;
     left: 16px;
+  }
+
+  .open nav #home {
+    margin-left: calc(50% - 24px);
   }
 
   nav header {
@@ -327,5 +340,10 @@ footer > img {
 
   nav footer > * {
     margin: 8px;
+  }
+
+  .open .thankyou {
+    color: #ffffc0;
+    background-color: #9acc85;
   }
 }
