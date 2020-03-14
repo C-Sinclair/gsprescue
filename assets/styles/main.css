@@ -11,7 +11,6 @@ body {
   background-color: #ffffc0;
   margin: 0;
   font-size: 16px;
-  overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -132,6 +131,7 @@ section header {
 
 section header > img {
   width: 30%;
+  object-fit: cover;
 }
 
 section header .logo {
@@ -160,6 +160,15 @@ article {
   width: calc(100% - 72px);
 }
 
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.link > span {
+  margin-left: 12px;
+}
+
 .thankyou {
   font-family: "Dancing Script", cursive;
   font-size: 2.5em;
@@ -171,8 +180,43 @@ article {
   position: fixed;
   right: 0;
   bottom: 0;
-  background-color: #ffffc0;
-  border-radius: 4px;
+}
+
+.thankyou > svg {
+  fill: #ffffc0;
+  stroke: rgb(62, 102, 23);
+  stroke-width: 3px;
+  transform: rotate(-135deg) scale(0.63);
+  position: absolute;
+  top: -118px;
+  right: -78px;
+}
+
+.thankyou > p {
+  margin: 0;
+  position: relative;
+}
+
+.thankyou > .paw {
+  position: absolute;
+  height: 36px;
+}
+
+.thankyou > #paw1 {
+  top: 42px;
+  right: -8px;
+}
+
+.thankyou > #paw2 {
+  top: 62px;
+  right: 35px;
+  transform: rotate(-9deg);
+}
+
+.thankyou > #paw3 {
+  top: -2px;
+  right: -2px;
+  transform: rotate(-11deg);
 }
 
 .input {
@@ -252,17 +296,20 @@ form#rehome label {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 600;
   color: white;
-  font-size: 45px;
+  font-size: 48px;
   margin-right: 8px;
 }
 
 footer {
   display: flex;
+  width: calc(100vw - 300px);
 }
 
 footer > img {
   min-width: 100%;
   min-height: 100%;
+  object-fit: contain;
+  height: auto;
 }
 
 @media screen and (max-width: 700px) {
@@ -345,5 +392,9 @@ footer > img {
   .open .thankyou {
     color: #ffffc0;
     background-color: #9acc85;
+  }
+
+  footer {
+    width: 100vw;
   }
 }
